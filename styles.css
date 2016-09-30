@@ -1,0 +1,27 @@
+.container-div{
+  width: 100%;
+  height: 100%;
+}
+
+.air-moving-up {
+  width: 2px;
+  height: 50px;
+  background-color: black;
+  position: absolute;
+}
+
+.hero {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+  /*background-image: url('Fallover Man.svg');
+  width: 480px;
+  height: 480px;*/
+  z-index: 100;
+}
+.hero #path2620 {
+  fill: red !important;
+}
+.hero #path2622 {
+  fill: red !important;
+}
