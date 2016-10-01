@@ -1,19 +1,32 @@
 body {
   overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 .container-div{
   width: 100%;
   height: 100%;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  transform-origin: 0 0;
+  transition: transform 300ms;
+  overflow: visible;
+}
+.container-div.many-people {
+  transform: scale(0.1, 0.1) translate(650%, 650%);
 }
 
 .air-moving-up {
-  width: 2px;
+  width: 3px;
   height: 50px;
   background-color: black;
   position: absolute;
 }
 
-.hero {
+.person {
   position: absolute;
   z-index: 100;
 }

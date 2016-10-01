@@ -1,4 +1,4 @@
-(function($, d3) {
+(function($, d3, showManyPeople) {
   let openUpper = (upper) => {
     upper.transition().duration(500)
       .attr('d', 'M0,0H100V50C200,0,-100,0,0,50Z')
@@ -14,7 +14,10 @@
 	  eye.fadeOut(1000, () => eye.remove());
 	}, 500);
   }
-  $(document).click(() => {
+  let clickHandler = () => {
     open($('#eye'))
-  })
-})($, d3);
+	showManyPeople();
+	$(document).off('click', clickHandler);
+  }
+  $(document).click(clickHandler)
+})($, d3, showManyPeople);

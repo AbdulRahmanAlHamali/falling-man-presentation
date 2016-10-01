@@ -16,8 +16,9 @@
   }
   $(document).ready(() => {
     let person = $('.person').html($('#svgContainer').html())
-	person.css({top: $(document).height()/2 - person.height()/2});
-	person.css({left: $(document).width()/2 - person.width()/2});
+	let containerDiv = $('.container-div')
+	person.css({top: containerDiv.height()/2 - person.height()/2});
+	person.css({left: containerDiv.width()/2 - person.width()/2});
     shake(d3.select('.person'));
   })
 })($, d3);
