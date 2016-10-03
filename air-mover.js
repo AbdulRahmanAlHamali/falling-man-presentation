@@ -15,31 +15,31 @@ var airParticleHeight = 50;
     })
   }
   let generateOneLine = () => {
-    for (let i = 0; i < airIntensity; i++) {
-      let space = (airEndLimitX - airStartLimitX) / airIntensity;
+    if (keepGenerating) {
+      for (let i = 0; i < airIntensity; i++) {
+        let space = (airEndLimitX - airStartLimitX) / airIntensity;
 
-      let airParticle = $('<div class="air-moving-up"></div>');
-      $('.container-div').append(airParticle);
-      airParticle.css({top: airStartLimitY - airParticle.height()})
-      airParticle.css({left: airStartLimitX + space * i})
-	  airParticle.css({width: airParticleWidth});
-	  airParticle.css({height: airParticleHeight});
-      animate(airParticle)
+        let airParticle = $('<div class="air-moving-up"></div>');
+        $('.container-div').append(airParticle);
+        airParticle.css({top: airStartLimitY - airParticle.height()})
+        airParticle.css({left: airStartLimitX + space * i})
+        airParticle.css({width: airParticleWidth});
+        airParticle.css({height: airParticleHeight});
+        animate(airParticle)
+      }
     }
   }
   let generate = () => {
     setTimeout(() => {
       generateOneLine();
-	  if (keepGenerating) {
-		generate();
-	  }
+	    generate();  	  
     }, 200)
   }
   $(document).ready(() => {
-	airStartLimitX = 0;
-	airEndLimitX = $(document).width();
-	airStartLimitY = $(document).height();
-	airEndLimitY = 0;
+  	airStartLimitX = 0;
+  	airEndLimitX = $(document).width();
+  	airStartLimitY = $(document).height();
+  	airEndLimitY = 0;
     generate();
   })
 })($);
