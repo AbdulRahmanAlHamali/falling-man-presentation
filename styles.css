@@ -18,6 +18,9 @@ body {
 .container-div.many-people {
   transform: scale(0.1, 0.1) translate(650%, 650%);
 }
+.container-div.streams {
+  transform: scale(0.066, 0.1) translate(350%, 350%);
+}
 
 .air-moving-up {
   width: 3px;

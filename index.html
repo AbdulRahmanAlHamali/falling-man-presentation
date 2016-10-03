@@ -4,6 +4,9 @@
   <script src="jquery.js"></script>
   <script src="d3.js"></script>
   <script src="air-mover.js"></script>
+  <script src="collecting-stream.js"></script>
+  <script src="playing-stream.js"></script>
+  <script src="show-streams.js"></script>
   <script src="side-convo.js"></script>
   <script src="show-many-people.js"></script>
   <script src="eye-opening.js"></script>
@@ -11,7 +14,7 @@
 </head>
 <body>
   <div id="svgContainer" style="display: none;">
-    <svg width="480" height="480" xmlns="http://www.w3.org/2000/svg">
+    <svg width="480" height="480" overflow="visible" xmlns="http://www.w3.org/2000/svg">
      <title>Fallover Man</title>
      <metadata id="metadata12390">image/svg+xmlOther map symbolsMohamed IbrahimPublic Domainclker.comother map symbols</metadata>
      <g>
@@ -21,6 +24,90 @@
        <path d="m262.71283,226.920715l-15.297867,-94.442078l93.493881,-54.870636c4.425751,-2.338417 7.902008,-6.384903 9.356354,-11.442322c2.970093,-10.240425 -2.844604,-20.987 -13.086304,-24.083969c-5.435425,-1.579868 -11.125824,-0.631695 -15.677155,2.086014l-133.25499,78.258804c-4.678146,2.592155 -8.723312,5.942856 -12.200882,10.052109l-56.196762,75.41423l-77.374702,-9.229477c-4.93058,1.706772 -9.165382,5.372635 -11.378256,10.556961c-4.29888,9.798325 0.252415,21.113815 9.988012,25.47551c4.109245,1.706726 8.533688,1.959122 12.642933,0.821304l78.764942,8.912964c2.844574,-1.010971 5.436707,-2.844574 7.52272,-5.182999l31.985947,-40.141663l15.297882,86.793762c2.844559,12.263672 10.998978,22.883392 22.566864,28.635284l68.651367,20.544922l10.113556,78.891846c1.264709,8.975708 7.459961,16.877716 16.43573,20.101563c13.086243,4.55127 27.435944,-2.212891 31.987213,-15.297852c1.453033,-4.107971 1.706757,-8.281281 1.137817,-12.199585l-12.390503,-96.592194c-1.454346,-7.143463 -5.878784,-13.464233 -12.453278,-17.004578l-42.732544,-12.832581l70.737427,-42.859375l86.475983,38.2453c0.568909,0.252441 1.075043,0.506165 1.581177,0.631653c13.084991,4.551331 27.434631,-2.211517 31.985962,-15.297852c4.298889,-12.199554 -1.51712,-25.665115 -13.084991,-30.97496l-98.551331,-44.122757c-0.506134,-0.126862 -0.82132,-0.253723 -1.327454,-0.443359c-7.079346,-2.465286 -14.602112,-1.642654 -20.607727,1.833588l-65.111023,39.762421l0,0l0,0l0,0z" id="path2622" fill-rule="nonzero" fill="#231f20"/>
       </g>
      </g>
+    </svg>
+  </div>
+  <div id="birdSVGContainer" style="display: none;">
+    <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="100" height="100" id="svg3182" sodipodi:version="0.32" inkscape:version="0.47 r22583" version="1.0" sodipodi:docname="bird01.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:export-filename="bird01.png" inkscape:export-xdpi="90" inkscape:export-ydpi="90" viewBox="0 0 1000 1000">
+      <defs id="defs3184">
+        <inkscape:perspective sodipodi:type="inkscape:persp3d" inkscape:vp_x="0 : 372.04724 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="1052.3622 : 372.04724 : 1" inkscape:persp3d-origin="526.18109 : 248.03149 : 1" id="perspective3191"/>
+        <clipPath id="clipPath3228" clipPathUnits="userSpaceOnUse">
+          <path id="path3230" clip-rule="evenodd" d="m 0,-0.3 842,0 L 842,595 0,595 0,-0.3 z"/>
+        </clipPath>
+        <inkscape:perspective id="perspective3220" inkscape:persp3d-origin="372.04724 : 350.78739 : 1" inkscape:vp_z="744.09448 : 526.18109 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_x="0 : 526.18109 : 1" sodipodi:type="inkscape:persp3d"/>
+      </defs>
+      <sodipodi:namedview inkscape:document-units="mm" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="1" inkscape:pageshadow="2" inkscape:zoom="0.60916667" inkscape:cx="282.48974" inkscape:cy="600" inkscape:current-layer="layer1" id="namedview3186" showgrid="false" inkscape:window-width="1680" inkscape:window-height="988" inkscape:window-x="-3" inkscape:window-y="-3" inkscape:window-maximized="1"/>
+      <metadata id="metadata3188">
+        <rdf:RDF>
+          <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+            <dc:title/>
+          </cc:Work>
+        </rdf:RDF>
+      </metadata>
+      <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(0,-52.3622)">
+        <g transform="matrix(2.2257821,0,0,-2.2257821,-254.83126,1173.4907)" inkscape:label="Oiseau test 02" id="g3222">
+          <g id="g3224">
+            <g clip-path="url(#clipPath3228)" id="g3226">
+              <g id="g3232">
+                <path id="path3234" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:2.27789116;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" d="m 513.34733,330.60041 c 27.4,-13.2 -33.2,31.2 -31.3,31.2 2,0 -21.7,15.1 -25.5,34 l 46.4,24.7 c 0,0 -123.9,-36 -121.1,-36 2.8,0 -52.9,-1.9 -52.9,-1.9 0,0 -39.2,20.9 -37.9,28.4 1.9,10.4 62.4,89.5 48.3,87 -91.8,-16.1 -166.5,-99.6 -168.4,-113.5 -1.9,-14.2 16.1,-22.7 16.1,-22.7 0,0 -57.6,-17 -55.8,-43.5 l -9.4,-11.3 c 0,0 13.2,1.8 13.2,0.9 0,-0.9 52,-18 52,-18 0,0 2.3,-37.4 10.4,-49.1 77.6,-111.6 135.3,-182.599998 171.2,-180.699998 l -53,176.899998 33.1,62.4 -11.3,11.4 c 0,0 39.7,24.5 56.7,20.8 0,0 116.6,0.2 119.2,-1 z"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <div id="birdCollectionSVGContainer" style="display: none;">
+    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	   width="30%" height="30%" viewBox="0 0 564.188 564.188" style="enable-background:new 0 0 564.188 564.188;"
+	   xml:space="preserve">
+     <g>
+	    <g id="iconos_3_">
+		    <path d="M290.996,193.421c4.332-4.743,7.229-11.332,7.229-19.89c0-5.288-4.284-9.562-9.562-9.562s-9.562,4.274-9.562,9.562
+    			c0,3.547-0.994,5.718-2.266,7.085l-2.295-2.075c-1.846-1.664-4.686-1.645-6.493,0.077l-3.223,3.05
+    			c-3.203-1.396-5.689-4.236-5.689-9.735c0-8.645,8.578-10.738,10.193-11.044c4.619-0.794,7.985-4.772,7.985-9.438v-27.138h6.693
+    			h3.921l13.378-66.938h-9.648h-4.781V9.562h-9.562v47.812h-4.781h-4.781V9.562h-9.562v47.812h-14.114l9.486,66.938h4.15h0.478
+    			v20.225c-8.606,3.911-18.169,12.307-18.169,27.387c0,10.643,4.361,18.245,10.624,23.17L83.06,353.812H0v200.812h564.188V353.812
+    			h-95.769L290.996,193.421z M259.469,199.914c3.873,1.368,7.966,2.094,12.001,2.094c4.026,0,8.014-1.004,11.695-2.773
+    			l170.996,154.578H96.973L259.469,199.914z M28.688,382.5h9.562v143.438h-9.562V382.5z M57.375,382.5H76.5v143.438H57.375V382.5z
+    			 M95.625,382.5h19.125v143.438H95.625V382.5z M133.875,382.5H153v143.438h-19.125V382.5z M172.125,382.5h19.125v143.438h-19.125
+    			V382.5z M210.375,382.5H229.5v143.438h-19.125V382.5z M248.625,382.5h19.125v143.438h-19.125V382.5z M286.875,382.5H306v143.438
+    			h-19.125V382.5z M325.125,382.5h19.125v143.438h-19.125V382.5z M363.375,382.5H382.5v143.438h-19.125V382.5z M401.625,382.5
+    			h19.125v143.438h-19.125V382.5z M439.875,382.5H459v143.438h-19.125V382.5z M535.5,525.938h-19.125V382.5H535.5V525.938z
+    			 M497.25,525.938h-19.125V382.5h19.125V525.938z"/>
+	    </g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
+      <g>
+      </g>
     </svg>
   </div>
   <div class="container-div">

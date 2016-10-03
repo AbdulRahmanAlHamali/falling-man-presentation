@@ -14,10 +14,12 @@
 	  eye.fadeOut(1000, () => eye.remove());
 	}, 500);
   }
-  let clickHandler = () => {
-    open($('#eye'))
-	showManyPeople();
-	$(document).off('click', clickHandler);
+  let clickHandler = (event) => {
+    if (event.keyCode === 33) {
+      open($('#eye'))
+      showManyPeople();
+      $(document).off('keyup', clickHandler);
+    }
   }
-  $(document).click(clickHandler)
+  $(document).keyup(clickHandler)
 })($, d3, showManyPeople);

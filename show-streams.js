@@ -1,4 +1,4 @@
-var showManyPeople = function () {
+var showStreams = function() {
   let shakeOnce = (personImage) => {
     personImage.transition().duration(200)
       .attr('transform', 'rotate(174.541, 246.143, 238.404)')
@@ -14,13 +14,27 @@ var showManyPeople = function () {
     let personImage = person.select('#layer1')
     shakeOnce(personImage)
   }
+
   let clickHandler = (event) => {
     if (event.keyCode === 33) {
       let containerDiv = $('.container-div');
-      let stepHeight = containerDiv.height();
-      let stepWidth = containerDiv.width();
-      for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
+      containerDiv.empty();
+      keepGenerating = false;
+      let hero = $('<div class="hero person"></div>');
+      hero.html($('#svgContainer').html())
+      containerDiv.append(hero)
+      hero.css({top: containerDiv.height()/2 - hero.height()/2});
+    	hero.css({left: containerDiv.width()/2 - hero.width()/2});
+      shake(d3.select(hero.get(0)));
+
+      let stepHeight = containerDiv.height() * 1/2;
+      let stepWidth = containerDiv.width() * 1/2;
+      for (let i = 0; i < 20; i++) {
+        if ((i+1) % 3 === 0 || (i+1) % 3 === 1) {
+
+          continue;
+        }
+        for (let j = 0; j < 30; j++) {
           if (i === 7 && j === 7) {
             continue;
           }
@@ -34,12 +48,12 @@ var showManyPeople = function () {
         }
       }
 
-      keepGenerating = false;
-      containerDiv.addClass("many-people")
+      containerDiv.addClass("streams")
+      showPlayingStream();
 
-      $(document).off('keyup', clickHandler);
-      showSideConvo();
+      $(document).off('keyup', clickHandler)
     }
   }
-  $(document).keyup(clickHandler);
+
+  $(document).keyup(clickHandler)
 }
