@@ -58,6 +58,17 @@ var showConclusion = function() {
                   .attr('transform', 'rotate(5.541, 246.143, 238.404)')
                   .on('end', () => {
                     hero.animate({top: 0 - hero.height() - 1000})
+					let innerinnerinnerClickHandler = (event) => {
+					  if (event.keyCode === 33) {
+                        let textDiv = $('<div class="text-div"></div>')
+                        textDiv.html('<h1 class="end">What If You Spend Your Whole Life Doing Something, Only to Realize by The End of Your Life, That You Should Have Been Doing Something Else</h1>')
+                        textDiv.hide().appendTo($('body')).fadeIn(1500)
+
+                        $(document).off('keyup', innerinnerinnerClickHandler)
+
+                      }
+					}
+					$(document).keyup(innerinnerinnerClickHandler);
                   })
                   $(document).off('keyup', innerinnerClickHandler)
                 }
