@@ -18,23 +18,23 @@ var showCollectingStream = function() {
 
   let animateVertically = (bird, cage) => {
     if (!bird.attr('caught')) {
-	  let brect = cage.find('path').get(0).getBoundingClientRect();
-	  let top = brect.top + brect.height * 4.5/6;
+  	  let brect = cage.find('path').get(0).getBoundingClientRect();
+  	  let top = brect.top + brect.height * 4.5/6;
       bird.animate({top: top - bird.height()/2},
       {
         duration: 500,
         queue: false,
         complete: () => {
-		  let brect = cage.find('path').get(0).getBoundingClientRect();
-		  let top = brect.top + brect.height * 5/6;
-	      bird.animate({top: top},
-          {
-            duration: 500,
-            queue: false,
-            complete: () => {
-              animateVertically(bird, cage)
-            }
-          })
+    		  let brect = cage.find('path').get(0).getBoundingClientRect();
+    		  let top = brect.top + brect.height * 5/6;
+    	      bird.animate({top: top},
+              {
+                duration: 500,
+                queue: false,
+                complete: () => {
+                  animateVertically(bird, cage)
+                }
+              })
         }
       })
     }
@@ -42,8 +42,8 @@ var showCollectingStream = function() {
 
   let animate = (bird, cage) => {
     let brect = cage.find('path').get(0).getBoundingClientRect();
-	let left = brect.left;
-	let right = left + brect.width;
+  	let left = brect.left;
+  	let right = left + brect.width;
     bird.animate({left: Math.random() * (right - left - bird.width()) + (left)},
     {
       duration: 3000,
@@ -61,8 +61,8 @@ var showCollectingStream = function() {
       let bird = $('<div style="position: absolute; height: 50; width: 50"></div>');
       bird.html($('#birdSVGContainer').html())
       let containerDiv = $('.container-div')
-	  let brect = cage.find('path').get(0).getBoundingClientRect();
-	  let top = brect.top + brect.height * 5/6;
+  	  let brect = cage.find('path').get(0).getBoundingClientRect();
+  	  let top = brect.top + brect.height * 5/6;
       bird.css({top: top - bird.height()/2});
       bird.css({left: containerDiv.width() + bird.width()})
       containerDiv.append(bird);
@@ -99,15 +99,16 @@ var showCollectingStream = function() {
         containerDiv.append(person)
         shake(d3.select(person.get(0)))
       }
-	  
-	  let cage = $('<div></div>');
-	  cage.html($('#birdCollectionSVGContainer').html())
-	  cage.css({width: containerDiv.width() * 0.45});
-	  cage.css({height: containerDiv.height() * 0.5});
-	  cage.css({left: 0, top: 0});
-	  containerDiv.append(cage);
+
+  	  let cage = $('<div></div>');
+  	  cage.html($('#birdCollectionSVGContainer').html())
+  	  cage.css({width: containerDiv.width() * 0.45});
+  	  cage.css({height: containerDiv.height() * 0.5});
+  	  cage.css({left: 0, top: 0});
+  	  containerDiv.append(cage);
 
       generateBirds(cage);
+      showRoamingQuestion();
 
       $(document).off('keyup', clickHandler)
     }
