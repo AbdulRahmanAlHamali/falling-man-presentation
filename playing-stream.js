@@ -31,9 +31,6 @@ var showPlayingStream = function() {
       })
   }
   let circulate = (person) => {
-    let svg = person.select('svg');
-    svg.attr('width', '600')
-    svg.attr('height', '600')
     let personImage = person.select('#layer1')
     circulateOnce(personImage)
   }
@@ -47,21 +44,27 @@ var showPlayingStream = function() {
         keepGenerating = true;
         let hero = $('<div class="hero person"></div>');
         hero.html($('#svgContainer').html())
-        hero.css({top: -containerDiv.height()});
-        hero.css({left: -containerDiv.width()});
+        let containerWidth = containerDiv.width();
+        let containerHeight = containerDiv.height();
+        hero.css({top: -containerHeight});
+        hero.css({left: -containerWidth});
+        hero.find('svg')
+          .attr('width', containerWidth / 10)
+          .attr('height', containerHeight / 6)
         containerDiv.append(hero)
         shake(d3.select(hero.get(0)));
-        hero.css({transform: 'scale(0.3, 0.3)'})
 
-        hero.animate({left: containerDiv.width()/3, top: containerDiv.height()/10}, 2000)
+        hero.animate({left: containerWidth/2 - hero.width()/2, top: containerHeight/2 - hero.height()/2}, 2000)
 
         for (let i = 0 ; i < 7; i++) {
           let person = $('<div class="person"></div>');
           person.html($('#svgContainer').html())
-          person.css({top: containerDiv.height() * 1/2});
-          person.css({left: containerDiv.width() * i / 7});
-          person.css({transform: 'scale(0.3, 0.3)'})
+          person.find('svg')
+            .attr('width', containerWidth / 10)
+            .attr('height', containerHeight / 6)
           containerDiv.append(person)
+          person.css({top: containerHeight * 9/12});
+          person.css({left: containerWidth * i / 7});
           circulate(d3.select(person.get(0)))
         }
       })

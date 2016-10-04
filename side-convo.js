@@ -24,12 +24,18 @@ var showSideConvo = function() {
 
         let hero = $('<div class="hero person"></div>');
         hero.html($('#svgContainer').html())
-        hero.css({top: containerDiv.height()/2 - hero.height()/2});
-        hero.css({left: containerDiv.width()*4/5});
+        hero.find('svg')
+          .attr('width', containerDiv.width() / 5)
+          .attr('height', containerDiv.height() / 3)
+        hero.css({top: containerDiv.height()/2 - containerDiv.height() / 3/2});
+        hero.css({left: containerDiv.width()*3/5});
         containerDiv.append(hero)
         let person = $('<div class="person"></div>');
         person.html($('#svgContainer').html())
-        person.css({top: containerDiv.height()/2 - person.height()/2});
+        person.find('svg')
+          .attr('width', containerDiv.width() / 5)
+          .attr('height', containerDiv.height() / 3)
+        person.css({top: containerDiv.height()/2 - containerDiv.height() / 3/2});
         person.css({left: containerDiv.width()/5});
         person.css({transform: 'scale(-1, 1)'});
         containerDiv.append(person)

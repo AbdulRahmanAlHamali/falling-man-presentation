@@ -26,9 +26,9 @@ var showManyPeople = function () {
           }
           let person = $('<div class="person"></div>')
           person.html($('#svgContainer').html())
-
-          person.css({top: ((i - 7) * stepHeight) + (stepHeight/2 - person.height()/2)});
-          person.css({left: ((j - 7) * stepWidth) + (stepWidth/2 - person.width()/2)});
+          person.find('svg').attr('width', stepWidth / 5).attr('height', stepHeight / 3);
+          person.css({top: ((i - 7) * stepHeight) + (stepHeight/2 - stepWidth/5/2)});
+          person.css({left: ((j - 7) * stepWidth) + (stepWidth/2 - stepHeight/3/2)});
           containerDiv.append(person);
           shake(d3.select(person.get(0)));
         }
@@ -38,7 +38,7 @@ var showManyPeople = function () {
       containerDiv.addClass("many-people")
 
       $(document).off('keyup', clickHandler);
-      
+
       showSideConvo();
     }
   }

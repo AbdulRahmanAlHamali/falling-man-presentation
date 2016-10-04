@@ -51,13 +51,20 @@ var showNod = function() {
         containerDiv.removeClass('streams');
         let hero = $('<div class="hero person"></div>');
         hero.html($('#svgContainer').html())
+        hero.find('svg')
+          .attr('width', containerDiv.width() / 5)
+          .attr('height', containerDiv.height() / 3)
         containerDiv.append(hero)
+        hero.css({top: containerDiv.height()/2 - containerDiv.height() / 3/2});
+        hero.css({left: containerDiv.width()*3/5});
+
         let person = $('<div class="person"></div>');
         person.html($('#svgContainer').html())
+        person.find('svg')
+          .attr('width', containerDiv.width() / 5)
+          .attr('height', containerDiv.height() / 3)
         containerDiv.append(person)
-        hero.css({top: containerDiv.height()/2 - hero.height()/2});
-        hero.css({left: containerDiv.width()*4/5});
-        person.css({top: containerDiv.height()/2 - person.height()/2});
+        person.css({top: containerDiv.height()/2 - containerDiv.height() / 3/2});
         person.css({left: containerDiv.width()/5});
         person.css({transform: 'scale(-1, 1)'});
         nod(d3.select(person.get(0)));

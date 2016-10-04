@@ -86,18 +86,22 @@ var showCollectingStream = function() {
         hero.css({top: containerDiv.height()});
         hero.css({left: -containerDiv.width()});
         containerDiv.append(hero)
+        hero.find('svg')
+          .attr('width', containerDiv.width() / 10)
+          .attr('height', containerDiv.height() / 6)
         shake(d3.select(hero.get(0)));
-        hero.css({transform: 'scale(0.3, 0.3)'})
 
-        hero.animate({left: containerDiv.width()/3, top: containerDiv.height()*5/10}, 2000)
+        hero.animate({left: containerDiv.width()/2 - hero.width()/2, top: containerDiv.height()*5/6 - hero.height()/2}, 2000)
 
         for (let i = 0 ; i < 7; i++) {
           let person = $('<div class="person"></div>');
           person.html($('#svgContainer').html())
-          person.css({top: containerDiv.height() * 1/4});
-          person.css({left: containerDiv.width() * i / 7});
-          person.css({transform: 'scale(0.3, 0.3)'})
+          person.find('svg')
+          .attr('width', containerDiv.width() / 10)
+          .attr('height', containerDiv.height() / 6)
           containerDiv.append(person)
+          person.css({top: containerDiv.height() * 1/2});
+          person.css({left: containerDiv.width() * i / 7});
           shake(d3.select(person.get(0)))
         }
 

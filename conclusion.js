@@ -25,24 +25,31 @@ var showConclusion = function() {
         keepGenerating = true;
         let hero = $('<div class="hero person"></div>');
         hero.html($('#svgContainer').html())
-        hero.css({left: containerDiv.width()/3});
-        hero.css({top: containerDiv.height()/10});
-        hero.css({transform: 'scale(0.3, 0.3)'})
+        let containerWidth = containerDiv.width();
+        let containerHeight = containerDiv.height();
+        hero.find('svg')
+          .attr('width', containerWidth / 10)
+          .attr('height', containerHeight / 6)
         containerDiv.append(hero)
+        hero.css({left: containerDiv.width()/2 - hero.width()/2});
+        hero.css({top: containerDiv.height()/6});
+
 
         for (let i = 0 ; i < 7; i++) {
           let person = $('<div class="person"></div>');
           person.html($('#svgContainer').html())
-          person.css({top: containerDiv.height() * 1/2});
-          person.css({left: containerDiv.width() * i / 7});
-          person.css({transform: 'scale(0.3, 0.3)'})
+          person.find('svg')
+            .attr('width', containerWidth / 10)
+            .attr('height', containerHeight / 6)
           containerDiv.append(person)
+          person.css({top: containerHeight * 9/12});
+          person.css({left: containerWidth * i / 7});
           shake(d3.select(person.get(0)))
         }
 
         let innerClickHandler = (event) => {
           if (event.keyCode === 33) {
-            hero.animate({top: containerDiv.height() * 0.55}, 3000, 'linear', () => {
+            hero.animate({top: containerDiv.height() * 7/12}, 3000, 'linear', () => {
 
               let innerinnerClickHandler = (event) => {
                 if (event.keyCode === 33) {

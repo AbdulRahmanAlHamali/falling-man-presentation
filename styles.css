@@ -16,7 +16,7 @@ body {
   overflow: visible;
 }
 .container-div.many-people {
-  transform: scale(0.1, 0.1) translate(650%, 650%);
+  transform: scale(0.1, 0.1) translate(700%, 700%);
   transition: transform 300ms;
 }
 .container-div.streams {
@@ -58,11 +58,11 @@ body {
   text-shadow: -1px -1px 0 #ccc, 1px -1px 0 #ccc, -1px 1px 0 #ccc, 1px 1px 0 #ccc;
 }
 .reasons li {
-  margin-left: 100px;
+  margin-left: 150px;
   font-size: 5vw;
   color: white;
   text-shadow: -1px -1px 0 #ccc, 1px -1px 0 #ccc, -1px 1px 0 #ccc, 1px 1px 0 #ccc;
-  line-height: 10vw;
+  line-height: 15vw;
 }
 
 .air-moving-up {
