@@ -32,12 +32,12 @@ var showStreams = function() {
 
       let stepHeight = containerDiv.height() * 1/2;
       let stepWidth = containerDiv.width() * 1/2;
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 10; i++) {
         if ((i+1) % 3 === 0 || (i+1) % 3 === 1) {
 
           continue;
         }
-        for (let j = 0; j < 30; j++) {
+        for (let j = 0; j < 10; j++) {
           if (i === 7 && j === 7) {
             continue;
           }

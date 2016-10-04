@@ -1,4 +1,4 @@
-var roamSpeed = 500;
+var roamSpeed = 1000;
 var showRoamingQuestion = function() {
   let shakeOnce = (personImage) => {
     personImage.transition().duration(200)
@@ -17,8 +17,8 @@ var showRoamingQuestion = function() {
   }
 
   let roam = (hero, stepHeight, stepWidth) => {
-    let x = Math.random() * (23 + 7) - 7;
-    let y = Math.random() * (13 + 7) - 7;
+    let x = Math.random() * (3 + 7) - 7;
+    let y = Math.random() * (3 + 7) - 7;
     hero.animate({
       left: x*stepWidth/2,
       top: y*stepHeight/2
@@ -43,15 +43,12 @@ var showRoamingQuestion = function() {
 
       let stepHeight = containerDiv.height() * 1/2;
       let stepWidth = containerDiv.width() * 1/2;
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 10; i++) {
         if ((i+1) % 3 === 0 || (i+1) % 3 === 1) {
 
           continue;
         }
-        for (let j = 0; j < 30; j++) {
-          if (i === 7 && j === 7) {
-            continue;
-          }
+        for (let j = 0; j < 10; j++) {
           let person = $('<div class="person"></div>')
           person.html($('#svgContainer').html())
           person.find('svg')

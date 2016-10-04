@@ -20,7 +20,7 @@ body {
   transition: transform 300ms;
 }
 .container-div.streams {
-  transform: scale(0.066, 0.1) translate(350%, 350%);
+  transform: scale(0.2, 0.2) translate(350%, 350%);
   transition: transform 300ms;
 }
 
@@ -77,10 +77,10 @@ body {
   z-index: 100;
 }
 .hero #path2620 {
-  fill: red !important;
+  fill: lightgreen !important;
 }
 .hero #path2622 {
-  fill: red !important;
+  fill: lightgreen !important;
 }
 
 #eye {

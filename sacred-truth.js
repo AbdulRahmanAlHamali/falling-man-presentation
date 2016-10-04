@@ -11,7 +11,7 @@ var showSacredTruth = function() {
       let innerClickHandler = (event) => {
         if (event.keyCode === 33) {
           textDiv.fadeOut(500, () => textDiv.remove())
-          roamSpeed = 200;
+          roamSpeed = 500;
 
           showNod();
           $(document).off('keyup', innerClickHandler)
