@@ -17,31 +17,29 @@ var showSideConvo = function() {
 
   let clickHandler = (event) => {
     if (event.keyCode === 33) {
-      let containerDiv = $('.container-div');
-      containerDiv.empty();
-      containerDiv.removeClass('many-people');
-      let hero = $('<div class="hero person"></div>');
-      hero.html($('#svgContainer').html())
-      containerDiv.append(hero)
-      let person = $('<div class="person"></div>');
-      person.html($('#svgContainer').html())
-      containerDiv.append(person)
+      showTransition(() => {
+        let containerDiv = $('.container-div');
+        containerDiv.empty();
+        containerDiv.removeClass('many-people');
 
-      // We are doing this because the width and height of the div are not
-      // immediately available for some reason
-      setTimeout(() => {
+        let hero = $('<div class="hero person"></div>');
+        hero.html($('#svgContainer').html())
         hero.css({top: containerDiv.height()/2 - hero.height()/2});
         hero.css({left: containerDiv.width()*4/5});
+        containerDiv.append(hero)
+        let person = $('<div class="person"></div>');
+        person.html($('#svgContainer').html())
         person.css({top: containerDiv.height()/2 - person.height()/2});
         person.css({left: containerDiv.width()/5});
         person.css({transform: 'scale(-1, 1)'});
+        containerDiv.append(person)
         shake(d3.select(hero.get(0)));
         shake(d3.select(person.get(0)));
         keepGenerating = true;
-      }, 100)
 
-      showStreams();
-      $(document).off('keyup', clickHandler)
+        showStreams();
+        $(document).off('keyup', clickHandler)
+      });
     }
   }
 

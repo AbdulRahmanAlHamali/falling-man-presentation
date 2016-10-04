@@ -40,13 +40,13 @@ var showPlayingStream = function() {
 
   let clickHandler = (event) => {
     if (event.keyCode === 33) {
-      let containerDiv = $('.container-div');
-      containerDiv.empty();
-      containerDiv.removeClass('streams')
-      keepGenerating = true;
-      let hero = $('<div class="hero person"></div>');
-      hero.html($('#svgContainer').html())
-      setTimeout(() => {
+      showTransition(() => {
+        let containerDiv = $('.container-div');
+        containerDiv.empty();
+        containerDiv.removeClass('streams')
+        keepGenerating = true;
+        let hero = $('<div class="hero person"></div>');
+        hero.html($('#svgContainer').html())
         hero.css({top: -containerDiv.height()});
         hero.css({left: -containerDiv.width()});
         containerDiv.append(hero)
@@ -64,7 +64,7 @@ var showPlayingStream = function() {
           containerDiv.append(person)
           circulate(d3.select(person.get(0)))
         }
-      }, 200)
+      })
 
       showCollectingStream();
       $(document).off('keyup', clickHandler)

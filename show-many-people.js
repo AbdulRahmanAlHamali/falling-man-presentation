@@ -38,6 +38,7 @@ var showManyPeople = function () {
       containerDiv.addClass("many-people")
 
       $(document).off('keyup', clickHandler);
+      
       showSideConvo();
     }
   }

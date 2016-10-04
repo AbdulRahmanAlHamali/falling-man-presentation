@@ -12,14 +12,16 @@ body {
   padding: 0;
   margin: 0;
   transform-origin: 0 0;
-  transition: transform 300ms;
+  transition: transform 0;
   overflow: visible;
 }
 .container-div.many-people {
   transform: scale(0.1, 0.1) translate(650%, 650%);
+  transition: transform 300ms;
 }
 .container-div.streams {
   transform: scale(0.066, 0.1) translate(350%, 350%);
+  transition: transform 300ms;
 }
 
 .text-div{
@@ -87,5 +89,18 @@ body {
   top: 0%;
   height: 100%;
   width: 100%;
+  z-index: 1000;
+}
+.transition::before {
+  filter: blur(20px);
+}
+
+.transition {
+  background: white;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 0;
+  margin: 0;
   z-index: 1000;
 }

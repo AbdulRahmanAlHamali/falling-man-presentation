@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <style type="text/css">
+
+    /* transition out, on mouseup, to white, 0.5s */
+    input
+    {
+      background:white;
+      -webkit-transition:background 0.5s;
+      -moz-transition:background 0.5s;
+      -ms-transition:background 0.5s;
+      -o-transition:background 0.5s;
+      transition:background 0.5s;
+    }
+
+    /* transition in, on click, to black, 0s */
+    input:active
+    {
+      background:black;
+      -webkit-transition:background 0s;
+      -moz-transition:background 0s;
+      -ms-transition:background 0s;
+      -o-transition:background 0s;
+      transition:background 0s;
+    }
+
+    </style>
+  </head>
+  <body>
+    <input type="button" value="click me to see the transition effect!">
+  </body>
+</html>

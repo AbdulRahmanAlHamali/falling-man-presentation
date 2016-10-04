@@ -78,39 +78,41 @@ var showCollectingStream = function() {
 
   let clickHandler = (event) => {
     if (event.keyCode === 33) {
-      let containerDiv = $('.container-div');
-      containerDiv.empty();
-      let hero = $('<div class="hero person"></div>');
-      hero.html($('#svgContainer').html())
-      hero.css({top: containerDiv.height()});
-      hero.css({left: -containerDiv.width()});
-      containerDiv.append(hero)
-      shake(d3.select(hero.get(0)));
-      hero.css({transform: 'scale(0.3, 0.3)'})
+      showTransition(() => {
+        let containerDiv = $('.container-div');
+        containerDiv.empty();
+        let hero = $('<div class="hero person"></div>');
+        hero.html($('#svgContainer').html())
+        hero.css({top: containerDiv.height()});
+        hero.css({left: -containerDiv.width()});
+        containerDiv.append(hero)
+        shake(d3.select(hero.get(0)));
+        hero.css({transform: 'scale(0.3, 0.3)'})
 
-      hero.animate({left: containerDiv.width()/3, top: containerDiv.height()*5/10}, 2000)
+        hero.animate({left: containerDiv.width()/3, top: containerDiv.height()*5/10}, 2000)
 
-      for (let i = 0 ; i < 7; i++) {
-        let person = $('<div class="person"></div>');
-        person.html($('#svgContainer').html())
-        person.css({top: containerDiv.height() * 1/4});
-        person.css({left: containerDiv.width() * i / 7});
-        person.css({transform: 'scale(0.3, 0.3)'})
-        containerDiv.append(person)
-        shake(d3.select(person.get(0)))
-      }
+        for (let i = 0 ; i < 7; i++) {
+          let person = $('<div class="person"></div>');
+          person.html($('#svgContainer').html())
+          person.css({top: containerDiv.height() * 1/4});
+          person.css({left: containerDiv.width() * i / 7});
+          person.css({transform: 'scale(0.3, 0.3)'})
+          containerDiv.append(person)
+          shake(d3.select(person.get(0)))
+        }
 
-  	  let cage = $('<div></div>');
-  	  cage.html($('#birdCollectionSVGContainer').html())
-  	  cage.css({width: containerDiv.width() * 0.45});
-  	  cage.css({height: containerDiv.height() * 0.5});
-  	  cage.css({left: 0, top: 0});
-  	  containerDiv.append(cage);
+        let cage = $('<div></div>');
+        cage.html($('#birdCollectionSVGContainer').html())
+        cage.css({width: containerDiv.width() * 0.45});
+        cage.css({height: containerDiv.height() * 0.5});
+        cage.css({left: 0, top: 0});
+        containerDiv.append(cage);
 
-      generateBirds(cage);
-      showRoamingQuestion();
+        generateBirds(cage);
+        showRoamingQuestion();
 
-      $(document).off('keyup', clickHandler)
+        $(document).off('keyup', clickHandler)
+      })
     }
   }
 
